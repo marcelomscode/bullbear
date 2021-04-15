@@ -143,7 +143,7 @@
 		var txRegistro = converteValor($("#txRegistro").val());
 		var total = "";
 		var totalIRRF="";
-		
+		alert();	
 		if(gainLoss < 0){
 			total = gainLoss - 	emolumentos -txRegistro;
 			$("#total").val(total.toLocaleString('pt-BR', {minimumFractionDigits: 2}));
@@ -152,6 +152,7 @@
 			$("#irrf").val(totalIRRF.toLocaleString('pt-BR', {minimumFractionDigits: 2}));
 		}
 	}
+
 
 	function bullBearSad(){
 
