@@ -1,6 +1,8 @@
 package br.com.bullbear.controllers.views;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -14,8 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import br.com.bullbear.model.BullBear;
 import br.com.bullbear.model.PlanoDiario;
@@ -35,11 +35,19 @@ public class HomeController {
 	
 	
 	@RequestMapping(value="/home", method=RequestMethod.GET)
-	public Model loginPage(Model model) {
+	public Model loginPage(Model model, String data) {
 	   	
-//     	model.addAttribute("result",taxasServices.getall().getBody());
+		if(data == null) {
+			LocalDateTime dataHoje = LocalDateTime.now();
+			DateTimeFormatter formatterData = DateTimeFormatter.ofPattern("uuuu-MM");
+			data = formatterData.format(dataHoje);
+			
+		}
+		
+		
+		
         model.addAttribute("ativos",ativosService.getAll() );
-        model.addAttribute("registros", bullBearServices.findByDataOrderByData("2021-04"));
+        model.addAttribute("registros", bullBearServices.findByDataOrderByData(data));
        	
 		return model;
 	}

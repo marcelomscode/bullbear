@@ -17,13 +17,19 @@
 <div id="container-fluid" style="padding-right: 30px;padding-left: 30px;">
 
 <div class="row">
+
+<select id="mes"  onblur="mudaMes();">
+	<option value="2021-04">Abril</option>
+	<option value="2021-03">Março</option>
+</select>
+
 <div class="col-md-12"><h1 align="center">REGISTRO DAY TRADE</h1></div> 
 
 
  	 <table class="table table-bordered table-shadow">
 		<tr>
 			<th class="font-gorda">DATA</th>
-			<th class="font-gorda">Total Sem taxas</th>
+			<th class="font-gorda">LUCRO</th>
 			<th class="font-gorda">Total taxas</th>
 			<th class="font-gorda">Total DARF</th>
 			<th class="font-gorda">Total Gain/Loss</th>
@@ -236,6 +242,11 @@
 
   }
 
+	function mudaMes(){
+
+	var mes = $("#mes").val();
+		$(location).attr('href', 'http://localhost:8080/home?data='+mes);
+	}
 
 
      function converteValor(valor){
