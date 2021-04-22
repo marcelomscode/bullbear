@@ -18,12 +18,14 @@
 
 <div class="row">
 
-<select id="mes"  onblur="mudaMes();">
-	<option value="2021-04">Abril</option>
-	<option value="2021-03">Março</option>
-</select>
 
-<div class="col-md-12"><h1 align="center">REGISTRO DAY TRADE</h1></div> 
+<div class="col-md-12">
+	<h1 align="center">REGISTRO DAY TRADE</h1>
+	<select id="mes"  onblur="mudaMes();">
+		<option value="2021-04">Abril</option>
+		<option value="2021-03">Março</option>
+	</select>
+</div> 
 
 
  	 <table class="table table-bordered table-shadow">
@@ -70,14 +72,14 @@
 						</c:forEach>
 					</select>
 				</th>
-				<th><input name="data" type="date" class="form-control" id="add_data" placeholder="Data"></th>
-	   			<th><input onblur="bullBearSad();"  name="gainLoss" type="text" class="form-control" id="add_gain_loss" placeholder="gain/loss"></th>
-	   			<th><input name="emolumentos" type="text" class="form-control" id="emolumentos" placeholder="emolumentos" ></th>
-	   			<th><input onblur="bullBearRegistro();" name="txRegistro" type="text" class="form-control" id="txRegistro" placeholder="Tx Registro" ></th>
-	   			<th><input onblur="darf2();" name="irrf" type="text" class="form-control" id="irrf" placeholder="IRRF"></th>
-	   			<th><input name="darf" type="text" class="form-control" id="darf" placeholder="DARF"></th>
+				<th><input name="data" type="date" class="form-control" id="add_data" placeholder="Data"  value="2021-04-24"></th>
+	   			<th><input onblur="bullBearSad();"  name="gainLoss" type="text" class="form-control" id="add_gain_loss" placeholder="gain/loss" value="200,00"></th>
+	   			<th><input name="emolumentos" type="text" class="form-control" id="emolumentos" placeholder="emolumentos" value="20,00"></th>
+	   			<th><input onblur="bullBearRegistro();" name="txRegistro" type="text" class="form-control" id="txRegistro" placeholder="Tx Registro" value="52,00"></th>
+	   			<th><input onblur="darf2();" name="irrf" type="text" class="form-control" id="irrf" placeholder="IRRF" value="51,25"></th>
+	   			<th><input name="darf" type="text" class="form-control" id="darf" placeholder="DARF" value="152,30"></th>
 	   			<th>=</th>
-	   			<th><input name="total" type="text" class="form-control" id="total" placeholder="Total"></th>
+	   			<th><input name="total" type="text" class="form-control" id="total" placeholder="Total" value="523,00"></th>
 	   			<th>
 	   				<button type="submit" class="btn btn-primary">Salvar</button>
 	   			</th>

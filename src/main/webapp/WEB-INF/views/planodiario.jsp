@@ -14,7 +14,14 @@
 
 
 <div class="row">
-<div class="col-md-12"><h1 align="center">PLANO DIÁRIO</h1></div> 
+<div class="col-md-12">
+	<h1 align="center">PLANO DIÁRIO</h1>
+	<select id="mes"  onblur="mudaMes();">
+			<option value="2021-04">Abril</option>
+			<option value="2021-03">Março</option>
+		</select>
+
+</div> 
 
 <table class="table table-bordered table-shadow">
 	<tr>

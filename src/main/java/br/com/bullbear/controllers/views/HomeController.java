@@ -44,8 +44,6 @@ public class HomeController {
 			
 		}
 		
-		
-		
         model.addAttribute("ativos",ativosService.getAll() );
         model.addAttribute("registros", bullBearServices.findByDataOrderByData(data));
        	
@@ -66,7 +64,7 @@ public class HomeController {
 	
 	
 	@PostMapping(value="/addBullBear") 
-	public ResponseEntity<BullBear> AddMoviments(
+	public String AddMoviments(
 			@RequestParam("ativo") String ativo,
 			@RequestParam("data") String data,
 			@RequestParam("gainLoss") String  gainLoss,
@@ -80,7 +78,7 @@ public class HomeController {
 		RestTemplate restTemplate = new RestTemplate();
 		ResponseEntity<BullBear> entity	= restTemplate.postForEntity(url, request, BullBear.class);
 		
-		return entity;
+		return "redirect:home";
 	}
 	
 	@RequestMapping(value="/acoes", method=RequestMethod.GET)
@@ -116,12 +114,13 @@ public class HomeController {
 	}
 	
 	@PostMapping(value="/addPlanoDiario") 
-	public ResponseEntity<PlanoDiario> addPlanoDiario(HttpEntity<String> request,Model model ){
+	public String addPlanoDiario(HttpEntity<String> request,Model model ){
 		String url = 	"http://localhost:8080/planoDiario/addPlanoDiario";
 		RestTemplate restTemplate = new RestTemplate();
-		ResponseEntity<PlanoDiario> entity =  restTemplate.postForEntity(url, request, PlanoDiario.class);
+//		ResponseEntity<PlanoDiario> entity =  
+		restTemplate.postForEntity(url, request, PlanoDiario.class);
 		
-		return entity;
+		return "redirect:planodiario";
 	}
 	
 	
