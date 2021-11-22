@@ -3,7 +3,7 @@
 
 <c:import url="_comum/header.jsp" />
 
-<h2>ADICIONA AÇÕES COMPRADAS</h2>
+<h2>ADICIONA AÃ‡Ã•ES COMPRADAS</h2>
 
 </body>
 </html>

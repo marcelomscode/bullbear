@@ -33,7 +33,7 @@ public class PlanoDiarioController {
 			return response;
 	
 		} catch (Exception e) {
-			System.out.println("Ocorreu uma problema: " + e);
+			System.out.println("Ocorreu um problema: " + e);
 			return null;
 		}
 		
